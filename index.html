@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="fr">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Hernandez — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap%22
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #8c1c1c;
+            --red-dark: #5e1010;
+            --red-mid: #a82222;
+            --red-light: #f2e0e0;
+            --red-xlight: #fdf5f5;
+            --ink: #1a0808;
+            --muted: #7a6060;
+            --white: #ffffff;
+            --cream: #fdf8f6;
+            --gold: #c9923a;
+            --gold-light: #f5e8d5;
+        }
+ 
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            min-height: 100vh;
+        }
+ 
+        /* ══ HERO ══ */
+        .hero {
+            background: var(--red-dark);
+            display: grid;
+            grid-template-columns: 1fr 2.2fr;
+            min-height: 360px;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.4;
+        }
+ 
+        .hero-photo-area {
+            background: var(--red-mid);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 2.5rem 2rem 0;
+            position: relative;
+        }
+ 
+        .hero-photo-area::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            background: var(--red-dark);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 50% 0);
+            z-index: 1;
+        }
+ 
+        .photo-frame {
+            width: 175px;
+            height: 210px;
+            border-radius: 14px 14px 0 0;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+ 
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+ 
+        .hero-content {
+            padding: 3rem 3.5rem 2.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+ 
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            width: fit-content;
+        }
+ 
+        /* ── Nom : Bebas Neue partout pour éviter le décalage chiffres/lettres ── */
+        .hero-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.5rem, 7vw, 5.5rem);
+            line-height: 0.9;
+            letter-spacing: 0.03em;
+            color: var(--white);
+        }
+ 
+        .hero-name .highlight {
+            color: var(--gold);
+        }
+ 
+        /* "20 ans" reste en Bebas Neue = chiffres et lettres parfaitement alignés */
+        .hero-name .age-tag {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.08em;
+            vertical-align: middle;
+            margin-left: 0.4rem;
+        }
+ 
+        /* Subtitle : DM Sans (pas de soucis de hauteur de chiffres) */
+        .hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.04em;
+            font-weight: 400;
+        }
+ 
+        .hero-tagline {
+            font-size: 0.93rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 500px;
+            line-height: 1.7;
+            font-weight: 300;
+            border-left: 3px solid var(--gold);
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+ 
+        .hero-tagline strong {
+            font-weight: 500;
+            font-style: normal;
+            color: var(--white);
+        }
+ 
+        /* ══ CONTACT BAR ══ */
+        .contact-bar {
+            background: var(--ink);
+            padding: 0.9rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+ 
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+ 
+        .contact-item:hover {
+            color: var(--gold);
+        }
+ 
+        .contact-item svg {
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+ 
+        /* ══ LAYOUT ══ */
+        .main {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            gap: 3rem;
+        }
+ 
+        /* ══ SIDEBAR ══ */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+ 
+        .section-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.06em;
+            color: var(--red);
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--red-light);
+        }
+ 
+        .section-label::after {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+            margin-bottom: 3px;
+        }
+ 
+        .lang-item {
+            margin-bottom: 0.9rem;
+        }
+ 
+        .lang-name {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.35rem;
+        }
+ 
+        .lang-level {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            color: var(--muted);
+            font-weight: 300;
+        }
+ 
+        .lang-bar {
+            height: 3px;
+            background: var(--red-light);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+ 
+        .lang-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+            border-radius: 2px;
+        }
+ 
+        /* ── Tags avec hover ── */
+        .quality-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+ 
+        .tag {
+            background: var(--red-xlight);
+            color: var(--red-dark);
+            border: 1px solid var(--red-light);
+            border-radius: 6px;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            padding: 0.25rem 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            cursor: default;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s cubic-bezier(.22, .68, 0, 1.4);
+        }
+ 
+        .tag:hover {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+            transform: translateY(-2px) scale(1.05);
+        }
+ 
+        .interest-item {
+            font-size: 0.84rem;
+            color: var(--ink);
+            margin-bottom: 0.45rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+ 
+        .interest-item::before {
+            content: '◆';
+            color: var(--gold);
+            font-size: 0.5rem;
+            flex-shrink: 0;
+            margin-top: 0.38em;
+        }
+
+        /* ══ MAIN CONTENT ══ */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+ 
+        /* Formation */
+        .formation-list {
+            border-left: 2px solid var(--red-light);
+            margin-left: 0.5rem;
+        }
+ 
+        .formation-item {
+            padding: 0.9rem 1.2rem;
+            position: relative;
+            transition: background 0.2s;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 0.4rem;
+        }
+ 
+        .formation-item:hover {
+            background: var(--red-xlight);
+        }
+ 
+        .formation-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--red);
+            border: 3px solid var(--cream);
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 1.1rem;
+            transition: background 0.2s;
+        }
+ 
+        .formation-item:hover::before {
+            background: var(--gold);
+        }
+ 
+        .formation-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--ink);
+            margin-bottom: 0.1rem;
+        }
+ 
+        .formation-school {
+            font-size: 0.8rem;
+            color: var(--red);
+            font-weight: 500;
+            margin-bottom: 0.1rem;
+        }
+ 
+        .formation-date {
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            font-family: 'DM Sans', sans-serif;
+        }
+ 
+        /* ══ ACCORDION EXPERIENCE ══ */
+        .exp-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 0.7rem;
+            border: 1px solid rgba(140, 28, 28, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+ 
+        .exp-item:hover {
+            box-shadow: 0 4px 20px rgba(140, 28, 28, 0.1);
+            border-color: rgba(140, 28, 28, 0.2);
+        }
+ 
+        .exp-item.open {
+            box-shadow: 0 6px 24px rgba(140, 28, 28, 0.13);
+            border-color: rgba(140, 28, 28, 0.25);
+        }
+ 
+        /* clickable header */
+        .exp-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.1rem 1.4rem;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            transition: background 0.2s ease;
+        }
+ 
+        .exp-trigger:hover {
+            background: var(--red-xlight);
+        }
+ 
+        .exp-item.open .exp-trigger {
+            background: var(--red-xlight);
+        }
+ 
+        /* left accent bar */
+        .exp-trigger::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--red), var(--gold));
+            border-radius: 3px 0 0 3px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+ 
+        .exp-item.open .exp-trigger::before,
+        .exp-trigger:hover::before {
+            opacity: 1;
+        }
+ 
+        .exp-trigger-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            flex: 1;
+            min-width: 0;
+        }
+ 
+        /* ── Job title : DM Sans 500 — propre, ni aplati ni trop gras ── */
+        .exp-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.2;
+            transition: color 0.2s ease;
+        }
+ 
+        .exp-trigger:hover .exp-title,
+        .exp-item.open .exp-title {
+            color: var(--red-dark);
+        }
+ 
+        .exp-company-inline {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-style: italic;
+            font-weight: 300;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+ 
+        .exp-trigger-right {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            flex-shrink: 0;
+        }
+ 
+        .exp-meta {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            background: var(--red);
+            padding: 0.2rem 0.65rem;
+            border-radius: 100px;
+            white-space: nowrap;
+            transition: background 0.25s ease;
+        }
+ 
+        .exp-item.open .exp-meta {
+            background: var(--gold);
+        }
+ 
+        /* chevron */
+        .exp-chevron {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2), color 0.2s;
+            flex-shrink: 0;
+        }
+ 
+        .exp-item.open .exp-chevron {
+            transform: rotate(180deg);
+            color: var(--red);
+        }
+ 
+        /* accordion body */
+        .exp-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+ 
+        .exp-item.open .exp-body {
+            max-height: 400px;
+        }
+ 
+        .exp-body-inner {
+            padding: 0 1.4rem 1.2rem;
+            border-top: 1px solid var(--red-light);
+            padding-top: 0.9rem;
+        }
+ 
+        .exp-tasks {
+            list-style: none;
+        }
+ 
+        .exp-tasks li {
+            font-size: 0.83rem;
+            color: #4a3535;
+            line-height: 1.65;
+            margin-bottom: 0.3rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+ 
+        .exp-tasks li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+ 
+        /* ══ COMPÉTENCES ══ */
+        .skill-item {
+            margin-bottom: 0.55rem;
+            font-size: 0.84rem;
+            color: var(--ink);
+            line-height: 1.4;
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+        }
+ 
+        .skill-item::before {
+            content: '◆';
+            color: var(--gold);
+            font-size: 0.45rem;
+            flex-shrink: 0;
+            margin-top: 0.45em;
+        }
+ 
+        .adobe-row {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            align-items: center;
+        }
+ 
+        .adobe-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s cubic-bezier(.22, .68, 0, 1.3), box-shadow 0.25s ease;
+            cursor: default;
+        }
+ 
+        .adobe-badge:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+        }
+ 
+        .adobe-ps {
+            background: #001e36;
+        }
+ 
+        .adobe-ai {
+            background: #ff9a00;
+        }
+ 
+        .adobe-ae {
+            background: #00005b;
+        }
+ 
+        .adobe-id {
+            background: #49021f;
+        }
+ 
+        .adobe-label {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+ 
+        .adobe-ps .adobe-label {
+            color: #4af;
+        }
+ 
+        .adobe-ai .adobe-label {
+            color: #1a0000;
+        }
+ 
+        .adobe-ae .adobe-label {
+            color: #9999ff;
+        }
+ 
+        .adobe-id .adobe-label {
+            color: #f36;
+        }
+ 
+        /* ══ FOOTER ══ */
+        footer {
+            text-align: center;
+            padding: 1.8rem;
+            font-size: 0.72rem;
+            color: var(--muted);
+            border-top: 1px solid var(--red-light);
+            max-width: 1100px;
+            margin: 0 auto;
+            font-family: 'DM Sans', sans-serif;
+            letter-spacing: 0.05em;
+        }
+ 
+        /* ══ RESPONSIVE ══ */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+ 
+            .hero-photo-area {
+                padding: 2rem 2rem 0;
+                justify-content: flex-start;
+            }
+ 
+            .hero-photo-area::after {
+                display: none;
+            }
+ 
+            .photo-frame {
+                width: 130px;
+                height: 160px;
+            }
+ 
+            .hero-content {
+                padding: 1.5rem 2rem 2rem;
+            }
+ 
+            .contact-bar {
+                padding: 1rem 1.5rem;
+                gap: 1rem;
+            }
+ 
+            .main {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+                gap: 2rem;
+            }
+        }
+ 
+        /* ══ ANIMATIONS ENTRÉE ══ */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+ 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ 
+        .hero-content>* {
+            animation: fadeUp 0.6s ease both;
+        }
+ 
+        .hero-content>*:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+ 
+        .hero-content>*:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+ 
+        .hero-content>*:nth-child(3) {
+            animation-delay: 0.25s;
+        }
+ 
+        .hero-content>*:nth-child(4) {
+            animation-delay: 0.35s;
+        }
+ 
+        .exp-item,
+        .formation-item {
+            animation: fadeUp 0.45s ease both;
+            animation-play-state: paused;
+        }
+ 
+        .exp-item.visible,
+        .formation-item.visible {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+        <!-- HERO -->
+    <header class="hero">
+        <div class="hero-photo-area">
+            <div class="photo-frame">
+                <img src="maya.jpeg" alt="Maya Hernandez">
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="badge">✦ Stage · CDI / CDD / Saisonnier</div>
+            <div class="hero-name">
+                Maya <span class="highlight">Hernandez</span><span class="age-tag"> · 20 ans</span>
+            </div>
+            <div class="hero-subtitle">2ème année · Bachelor Design Graphique &amp; Digital · L'IDEM</div>
+            <p class="hero-tagline">
+                Polyvalente et attirée par les univers <strong>visuels dynamiques et colorés</strong>,
+                je m'intéresse au <strong>motion design</strong>, à la création d'<strong>affiches</strong>
+                et au <strong>branding</strong>. Je cherche à intégrer un stage pour donner vie à ces
+                compétences sur des projets concrets.
+            </p>
+        </div>
+    </header>
+ 
+    <!-- CONTACT BAR -->
+    <div class="contact-bar">
+        <a href="tel:0767879038" class="contact-item">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.7 11.83 19.79 19.79 0 01.66 3.18 2 2 0 012.63 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.6a16 16 0 006.29 6.29l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            07 67 87 90 38
+        </a>
+        <a href="mailto:h25maya@icloud.com" class="contact-item">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+            </svg>
+            h25maya@icloud.com
+        </a>
+        <span class="contact-item">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            Saleilles (66280)
+        </span>
+        <span class="contact-item">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+            </svg>
+            Véhiculée (scooter)
+        </span>
+    </div>
+ 
+    <!-- MAIN -->
+    <main class="main">
+ 
+        <aside class="sidebar">
+            <div>
+                <div class="section-label">Langues</div>
+                <div class="lang-item">
+                    <div class="lang-name">Français <span class="lang-level">Langue maternelle · Certificat
+                            Voltaire</span></div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width:100%"></div>
+                    </div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Anglais <span class="lang-level">Élémentaire A2 · Certificat Cambridge</span>
+                    </div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width:40%"></div>
+                    </div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Espagnol <span class="lang-level">Élémentaire A1 · Mention euro BAC</span>
+                    </div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width:25%"></div>
+                    </div>
+                </div>
+            </div>
+ 
+            <div>
+                <div class="section-label">Qualités</div>
+                <div class="quality-tags">
+                    <span class="tag">Autonomie</span>
+                    <span class="tag">Patience</span>
+                    <span class="tag">Empathie</span>
+                    <span class="tag">Écoute</span>
+                    <span class="tag">Ouverture d'esprit</span>
+                    <span class="tag">Tolérance</span>
+                    <span class="tag">Curiosité</span>
+                </div>
+            </div>
+ 
+            <div>
+                <div class="section-label">Interêts</div>
+                <div class="interest-item">Ancienne élève au conservatoire de musique (3 à 15 ans)</div>
+                <div class="interest-item">Scout depuis 2017</div>
+                <div class="interest-item">Bénévole / actions solidaires</div>
+            </div>
+        </aside>
+ 
+        <div class="content">
+
+        <!-- FORMATION -->
+            <section>
+                <div class="section-label">Formation</div>
+                <div class="formation-list">
+                    <div class="formation-item">
+                        <div class="formation-title">Bachelor Design Graphique et Digital</div>
+                        <div class="formation-school">L'IDEM · Le Soler</div>
+                        <div class="formation-date">2024 — 2028</div>
+                    </div>
+                    <div class="formation-item">
+                        <div class="formation-title">Baccalauréat — Mathématiques · Sciences Économiques et Sociales
+                        </div>
+                        <div class="formation-school">Lycée Saint Pierre de la Mer · Saint-Cyprien</div>
+                        <div class="formation-date">2021 — 2024</div>
+                    </div>
+                </div>
+            </section>
+ 
+            <!-- EXPÉRIENCE -->
+            <section>
+                <div class="section-label">Expérience Professionnelle</div>
+ 
+                <div class="exp-item">
+                    <div class="exp-trigger">
+                        <div class="exp-trigger-left">
+                            <div class="exp-title">Community Manager</div>
+                            <div class="exp-company-inline">Dirigeants Commerciaux de France · Bénévole</div>
+                        </div>
+                        <div class="exp-trigger-right">
+                            <span class="exp-meta">11/2024 — Actuellement</span>
+                            <span class="exp-chevron">
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-body-inner">
+                            <ul class="exp-tasks">
+                                <li>Gestion et animation des réseaux sociaux de l'association</li>
+                                <li>Création de contenus visuels et rédactionnels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="exp-item">
+                    <div class="exp-trigger">
+                        <div class="exp-trigger-left">
+                            <div class="exp-title">Secrétaire administrative</div>
+                            <div class="exp-company-inline">Cabinet d'avocat Juridicia · Perpignan · CDD</div>
+                        </div>
+                        <div class="exp-trigger-right">
+                            <span class="exp-meta">Saison 2023 · Saison 2025</span>
+                            <span class="exp-chevron">
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-body-inner">
+                            <ul class="exp-tasks">
+                                <li>Accueil physique et téléphonique des clients du cabinet</li>
+                                <li>Gestion du standard, traitement du courrier et des mails, archivage, numérisation
+                                </li>
+                                <li>Mise en place de dispositifs réglementaires de sécurité (affichage obligatoire,
+                                    DUER)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="exp-item">
+                    <div class="exp-trigger">
+                        <div class="exp-trigger-left">
+                            <div class="exp-title">Agent de ménage</div>
+                            <div class="exp-company-inline">Eco'Net · Perpignan · CDD</div>
+                        </div>
+                        <div class="exp-trigger-right">
+                            <span class="exp-meta">Saison 2024</span>
+                            <span class="exp-chevron">
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-body-inner">
+                            <ul class="exp-tasks">
+                                <li>Nettoyage des zones communes résidentielles (hall, cage d'escalier…)</li>
+                                <li>Nettoyage et entretien du local poubelle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="exp-item">
+                    <div class="exp-trigger">
+                        <div class="exp-trigger-left">
+                            <div class="exp-title">Chef Scouts Marin</div>
+                            <div class="exp-company-inline">Scouts Marin · Saint-Cyprien · Bénévole</div>
+                        </div>
+                        <div class="exp-trigger-right">
+                            <span class="exp-meta">09/2017 — 12/2023</span>
+                            <span class="exp-chevron">
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-body-inner">
+                            <ul class="exp-tasks">
+                                <li>Encadrement d'un groupe de jeunes en mer et sur terre</li>
+                                <li>Gestion administrative et organisation des activités</li>
+                                <li>Collecte de fonds (téléthon), actions solidaires</li>
+                                <li>Soutien aux personnes âgées, organisation de collectes alimentaires et
+                                    vestimentaires</li>
+                                <li>Prise en charge d'un groupe d'enfants de 8 à 10 ans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="exp-item">
+                    <div class="exp-trigger">
+                        <div class="exp-trigger-left">
+                            <div class="exp-title">Stagiaire</div>
+                            <div class="exp-company-inline">Numéric Wave · Perpignan · Stage</div>
+                        </div>
+                        <div class="exp-trigger-right">
+                            <span class="exp-meta">02 / 2022</span>
+                            <span class="exp-chevron">
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-body-inner">
+                            <ul class="exp-tasks">
+                                <li>Participation à la création et à l'organisation logistique d'événements</li>
+                                <li>Assistance à l'élaboration de plans marketing, création de supports visuels et
+                                    écrits</li>
+                                <li>Participation active aux réunions d'équipe et contribution aux projets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+ 
+            </section>
+ 
+            <!-- COMPÉTENCES -->
+            <section>
+                <div class="section-label">Compétences</div>
+                <div class="skill-item">Capacité d'analyse et de synthèse</div>
+                <div class="skill-item">Curiosité artistique et culturelle</div>
+                <div class="skill-item">Sens esthétique · Esprit critique</div>
+                <div class="skill-item">Utilisation des logiciels Creative Cloud / Suite Adobe</div>
+                <div class="adobe-row">
+                    <div class="adobe-badge adobe-ps" title="Photoshop"><span class="adobe-label">Ps</span></div>
+                    <div class="adobe-badge adobe-ai" title="Illustrator"><span class="adobe-label">Ai</span></div>
+                    <div class="adobe-badge adobe-ae" title="After Effects"><span class="adobe-label">Ae</span></div>
+                    <div class="adobe-badge adobe-id" title="InDesign"><span class="adobe-label">Id</span></div>
+                </div>
+            </section>
+ 
+        </div>
+    </main>
+ 
+    <footer>
+        Maya Hernandez &nbsp;·&nbsp; CV &nbsp;·&nbsp; <span id="year"></span> &nbsp;·&nbsp; Disponible pour un stage en
+        design graphique
+    </footer>
+ 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+ 
+        // ── Accordion ──
+        document.querySelectorAll('.exp-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const item = trigger.closest('.exp-item');
+                const isOpen = item.classList.contains('open');
+                // ferme tous les autres
+                document.querySelectorAll('.exp-item.open').forEach(el => el.classList.remove('open'));
+                // ouvre ou ferme celui-ci
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+ 
+        // ── Scroll animation ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.exp-item, .formation-item').forEach(el => observer.observe(el));
+    </script>
+</body>
+ 
+</html>
